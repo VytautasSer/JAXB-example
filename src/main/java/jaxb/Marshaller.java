@@ -11,8 +11,7 @@ public class Marshaller {
         try {
             JAXBContext jc = JAXBContext.newInstance(className);
             Unmarshaller unmarshaller = jc.createUnmarshaller();
-            T result = (T) unmarshaller.unmarshal(new File(path));
-            return result;
+            return (T) unmarshaller.unmarshal(new File(path));
         } catch (JAXBException e) {
             e.printStackTrace();
             return null;
