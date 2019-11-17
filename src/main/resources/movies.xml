@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<movies>
+    <movie id="0">
+        <title>jax-b in combat</title>
+        <actors>
+            <actor>John Scena</actor>
+            <actor>Stalone</actor>
+        </actors>
+        <genre>ACTION</genre>
+    </movie>
+    <movie id="0">
+        <title>in exception hell</title>
+        <actors>
+            <actor>Null pointer exception</actor>
+            <actor>Run time exception</actor>
+        </actors>
+        <genre>HORROR</genre>
+    </movie>
+</movies>
