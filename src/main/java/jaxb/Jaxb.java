@@ -5,7 +5,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 
-public class Marshaller {
+public class Jaxb {
 
     public static <T> T parseXmlFile(String path, Class<T> className) {
         try {
@@ -15,6 +15,16 @@ public class Marshaller {
         } catch (JAXBException e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public static <T> void serializeToXmlFile(T data, Class<T> className, String fileName) {
+        try {
+            JAXBContext jc = JAXBContext.newInstance(className);
+            javax.xml.bind.Marshaller marshaller = jc.createMarshaller();
+            marshaller.marshal(data, new File("./src/main/resources/" + fileName));
+        } catch (JAXBException e) {
+            e.printStackTrace();
         }
     }
 

@@ -7,10 +7,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name="movies")
+@XmlRootElement(name = "movies")
 public class Movies {
 
-    @XmlElement(name="movie")
+    public Movies() {
+    }
+
+    public Movies(List<Movie> movies) {
+        this.movies = movies;
+    }
+
+    @XmlElement(name = "movie")
     public List<Movie> movies;
 
     public List<Movie> getMovies() {
