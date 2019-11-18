@@ -26,7 +26,7 @@ public class JaxbTest {
                         new Movie("1", "GIT down", asList("John", "Patrik"), Genre.HORROR)
                 )
         );
-        Jaxb.serializeToXmlFile(moviesToSerialize, Movies.class, "test.xml");
+        Jaxb.serializeToXmlFile(moviesToSerialize, "test.xml");
 
         Movies movies = Jaxb.parseXmlFile("./src/main/resources/test.xml", Movies.class);
         movies.getMovies().stream().forEach(System.out::println);

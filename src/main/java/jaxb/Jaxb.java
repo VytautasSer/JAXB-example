@@ -18,10 +18,11 @@ public class Jaxb {
         }
     }
 
-    public static <T> void serializeToXmlFile(T data, Class<T> className, String fileName) {
+    public static <T> void serializeToXmlFile(T data, String fileName) {
         try {
-            JAXBContext jc = JAXBContext.newInstance(className);
+            JAXBContext jc = JAXBContext.newInstance(data.getClass());
             javax.xml.bind.Marshaller marshaller = jc.createMarshaller();
+            marshaller.setProperty("jaxb.formatted.output", Boolean.TRUE);
             marshaller.marshal(data, new File("./src/main/resources/" + fileName));
         } catch (JAXBException e) {
             e.printStackTrace();
